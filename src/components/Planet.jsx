@@ -10,7 +10,7 @@ import gsap from "gsap";
 export function Planet(props) {
   const shapeContainer = useRef(null);
   const shperesContainer = useRef(null);
-  const ringContainer = useRef(null);
+  // const ringContainer = useRef(null);
   const { nodes, materials } = useGLTF("/models/Planet.glb");
 
   useGSAP(() => {
@@ -31,17 +31,17 @@ export function Planet(props) {
       },
       "-=25%"
     );
-    tl.from(
-      ringContainer.current.rotation,
-      {
-        x: 0.8,
-        y: 0,
-        z: 0,
-        duration: 10,
-        ease: "power1.inOut",
-      },
-      "<"
-    );
+    // tl.from(
+    //   ringContainer.current.rotation,
+    //   {
+    //     x: 0.8,
+    //     y: 0,
+    //     z: 0,
+    //     duration: 10,
+    //     ease: "power1.inOut",
+    //   },
+    //   "<"
+    // );
   }, []);
 
   return (
@@ -64,7 +64,7 @@ export function Planet(props) {
           scale={0.223}
         />
       </group>
-      <mesh
+      {/* <mesh
         ref={ringContainer}
         castShadow
         receiveShadow
@@ -72,7 +72,7 @@ export function Planet(props) {
         material={materials["Material.001"]}
         rotation={[-0.124, 0.123, -0.778]}
         scale={2}
-      />
+      /> */}
     </group>
   );
 }
